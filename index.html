@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor Alpino - El Arte Culinario de Suiza</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        swissRed: '#D52B1E',
+                        swissDark: '#1E1E1E',
+                        alpineWood: '#8B5A2B',
+                        alpineCream: '#FDFBF7',
+                        alpineCard: '#F5EBE6'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FDFBF7;
+            color: #2D2D2D;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1527668707153-294022f3e8f8?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+    </style>
+</head>
+<body class="bg-alpineCream min-h-screen flex flex-col antialiased selection:bg-swissRed selection:text-white">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-swissRed flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
+                    🇨🇭
+                </div>
+                <div>
+                    <span class="text-xl font-serif font-bold text-stone-900 tracking-tight">Sabor Alpino</span>
+                    <span class="block text-xs uppercase tracking-widest text-swissRed font-semibold">Gastronomía Suiza</span>
+                </div>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-700">
+                <a href="#historia" class="hover:text-swissRed transition-colors">Historia</a>
+                <a href="#platos" class="hover:text-swissRed transition-colors">Platos Icónicos</a>
+                <a href="#quesos" class="hover:text-swissRed transition-colors">Quesos</a>
+                <a href="#chocolates" class="hover:text-swissRed transition-colors">Chocolates</a>
+                <a href="#regiones" class="hover:text-swissRed transition-colors">Regiones</a>
+                <a href="#quiz" class="hover:text-swissRed transition-colors">Cuestionario</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a href="#quiz" class="hidden sm:inline-flex items-center px-4 py-2 rounded-full bg-swissRed text-white text-sm font-semibold shadow hover:bg-red-700 transition-all transform hover:-translate-y-0.5">
+                    Descubre tu plato
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-stone-800 focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-200 px-6 py-4 space-y-3">
+            <a href="#historia" class="block text-stone-700 hover:text-swissRed font-medium">Historia</a>
+            <a href="#platos" class="block text-stone-700 hover:text-swissRed font-medium">Platos Icónicos</a>
+            <a href="#quesos" class="block text-stone-700 hover:text-swissRed font-medium">Quesos</a>
+            <a href="#chocolates" class="block text-stone-700 hover:text-swissRed font-medium">Chocolates</a>
+            <a href="#regiones" class="block text-stone-700 hover:text-swissRed font-medium">Regiones</a>
+            <a href="#quiz" class="block text-stone-700 hover:text-swissRed font-medium">Cuestionario</a>
+        </div>
+    </nav>
+
+    <header class="hero-bg min-h-[90vh] flex items-center justify-center text-center px-4 pt-20">
+        <div class="max-w-4xl mx-auto text-white space-y-6">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-swissRed/90 backdrop-blur text-xs uppercase tracking-widest font-bold shadow-lg animate-fade-in">
+                Tradición, Pasión y Sabor
+            </span>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold tracking-tight leading-tight">
+                El Viaje Culinario por el Corazón de los Alpes
+            </h1>
+            <p class="text-lg sm:text-xl text-stone-200 font-light max-w-2xl mx-auto">
+                Descubre la magia gastronómica de Suiza: una exquisita fusión de influencias francesas, alemanas e italianas unidas por el amor al queso, el chocolate y la excelencia artesanal.
+            </p>
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#platos" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-swissRed text-white font-semibold shadow-lg hover:bg-red-700 transition-all flex items-center justify-center space-x-2">
+                    <span>Explorar Menú</span>
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+                <a href="#quiz" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur text-white font-semibold border border-white/30 transition-all">
+                    Test Interactivo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section id="historia" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900">Historia y Diversidad Culinaria</h2>
+                <div class="w-16 h-1 bg-swissRed mx-auto rounded"></div>
+                <p class="text-stone-600 text-lg">
+                    La cocina suiza no es monolítica; es el reflejo de sus 26 cantones y de la confluencia de tres grandes culturas culinarias europeas.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-stone-200/80 hover:shadow-md transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-amber-500"></div>
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xl mb-6">
+                        <i class="fa-solid fa-beer-mug-empty"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-stone-900 mb-3">Influencia Alemana</h3>
+                    <p class="text-stone-600 leading-relaxed">
+                        Predominante en el norte y centro del país. Aporta recetas contundentes y reconfortantes basadas en patatas, salchichas artesanales, sopas espesas y el famoso <strong>Rösti</strong>.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-stone-200/80 hover:shadow-md transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-blue-600"></div>
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xl mb-6">
+                        <i class="fa-solid fa-wine-glass"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-stone-900 mb-3">Influencia Francesa</h3>
+                    <p class="text-stone-600 leading-relaxed">
+                        Presente en la región occidental (Suiza Romandía). Introduce técnicas culinarias refinadas, la cultura del vino, pastelería fina y los rituales sagrados del queso fundido como la <strong>Fondue</strong> y la <strong>Raclette</strong>.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-stone-200/80 hover:shadow-md transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-emerald-600"></div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xl mb-6">
+                        <i class="fa-solid fa-bowl-food"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-stone-900 mb-3">Influencia Italiana</h3>
+                    <p class="text-stone-600 leading-relaxed">
+                        Enriquecida en el cantón de Ticino. Aporta ingredientes mediterráneos, polenta, risottos cremosos, pastas artesanales y un toque de sol alpino lleno de aromas frescos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="platos" class="py-20 bg-stone-100/70 border-y border-stone-200 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs uppercase tracking-widest text-swissRed font-bold">Auténtico Sabor</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900">Platos Icónicos de Suiza</h2>
+                    <div class="w-16 h-1 bg-swissRed mx-auto rounded"></div>
+                    <p class="text-stone-600 text-lg">
+                        Cada receta cuenta una historia de supervivencia en las montañas, tradiciones comunitarias y un amor incondicional por los lácteos.
+                    </p>
+                </div>
+
+                <!-- Dishes Grid -->
+                <div id="dishes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Populated via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="quesos" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs uppercase tracking-widest text-swissRed font-bold">El Tesoro Nacional</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900">Quesos Suizos Famosos</h2>
+                <div class="w-16 h-1 bg-swissRed mx-auto rounded"></div>
+                <p class="text-stone-600 text-lg">
+                    Con más de 450 variedades, el queso suizo es elaborado con leche de vacas que pastan en praderas alpinas libres de químicos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="cheese-container">
+                <!-- Populated via JavaScript -->
+            </div>
+        </section>
+
+        <section id="chocolates" class="py-20 bg-stone-900 text-white px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs uppercase tracking-widest text-swissRed font-bold">Dulzura Legendaria</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Chocolates y Postres Suizos</h2>
+                    <div class="w-16 h-1 bg-swissRed mx-auto rounded"></div>
+                    <p class="text-stone-300 text-lg">
+                        Suiza no sólo perfeccionó el chocolate con leche en el siglo XIX, sino que creó una cultura de confitería finísima admirada en todo el planeta.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="bg-stone-800/80 rounded-2xl p-8 border border-stone-700/60 space-y-4">
+                        <div class="h-48 rounded-xl overflow-hidden mb-4">
+                            <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80" alt="Chocolate con leche" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-amber-200">El Nacimiento del Chocolate con Leche</h3>
+                        <p class="text-stone-300 text-sm leading-relaxed">
+                            En 1875, Daniel Peter combinó el chocolate amargo con leche condensada aportada por su vecino Henri Nestlé, creando el primer chocolate con leche suave y cremoso del mundo.
+                        </p>
+                    </div>
+
+                    <div class="bg-stone-800/80 rounded-2xl p-8 border border-stone-700/60 space-y-4">
+                        <div class="h-48 rounded-xl overflow-hidden mb-4">
+                            <img src="http://googleusercontent.com/image_collection/image_retrieval/12850940118449227551_0" alt="Pralinés y Trufas Artesanales" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-amber-200">Pralinés y Trufas Artesanales</h3>
+                        <p class="text-stone-300 text-sm leading-relaxed">
+                            Los maestros chocolateros suizos combinan texturas sedosas, rellenos de avellanas de Piamonte, mantequilla fresca y acabados meticulosamente esculpidos a mano.
+                        </p>
+                    </div>
+
+                    <div class="bg-stone-800/80 rounded-2xl p-8 border border-stone-700/60 space-y-4">
+                        <div class="h-48 rounded-xl overflow-hidden mb-4">
+                            <img src="https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&w=600&q=80" alt="Fondue de Chocolate" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-amber-200">Fondue de Chocolate y Postres</h3>
+                        <p class="text-stone-300 text-sm leading-relaxed">
+                            Frutas frescas de temporada (fresas, plátanos, peras) sumergidas en chocolate suizo fundido con un toque de nata. También destaca la famosa <em>Tarta de Nuez de Engadina</em>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="regiones" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs uppercase tracking-widest text-swissRed font-bold">Geografía Gastronómica</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900">Cantones y Regiones Culinarias</h2>
+                <div class="w-16 h-1 bg-swissRed mx-auto rounded"></div>
+                <p class="text-stone-600 text-lg">
+                    Selecciona una región para descubrir sus especialidades locales y secretos culinarios.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8" id="region-buttons">
+                <!-- Region buttons generated by JS -->
+            </div>
+
+            <div id="region-display" class="bg-white rounded-2xl p-8 sm:p-12 shadow-sm border border-stone-200 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Region info dynamically loaded -->
+            </div>
+        </section>
+
+        <section id="quiz" class="py-20 bg-stone-100/70 border-y border-stone-200 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-stone-200/80">
+                <div class="text-center mb-8 space-y-2">
+                    <span class="text-xs uppercase tracking-widest text-swissRed font-bold">Descubre tu plato suizo ideal</span>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900">¿Qué comer hoy en Suiza?</h2>
+                    <p class="text-stone-600 text-sm">Responde estas breves preguntas y te diremos qué plato alpino va contigo.</p>
+                </div>
+
+                <div id="quiz-container">
+                    <!-- Question 1 -->
+                    <div class="quiz-step" data-step="1">
+                        <h3 class="text-lg font-semibold text-stone-800 mb-6 text-center">1. ¿Qué tipo de ingrediente principal prefieres para tu comida?</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <button onclick="selectQuizAnswer(1, 'queso')" class="p-5 rounded-2xl border-2 border-stone-200 hover:border-swissRed hover:bg-red-50/50 transition-all text-center font-medium text-stone-800 group">
+                                <span class="block text-3xl mb-2">🧀</span> Queso derretido y reconfortante
+                            </button>
+                            <button onclick="selectQuizAnswer(1, 'carne')" class="p-5 rounded-2xl border-2 border-stone-200 hover:border-swissRed hover:bg-red-50/50 transition-all text-center font-medium text-stone-800 group">
+                                <span class="block text-3xl mb-2">🥩</span> Carne tierna o embutidos
+                            </button>
+                            <button onclick="selectQuizAnswer(1, 'dulce')" class="p-5 rounded-2xl border-2 border-stone-200 hover:border-swissRed hover:bg-red-50/50 transition-all text-center font-medium text-stone-800 group">
+                                <span class="block text-3xl mb-2">🍫</span> Postres o algo dulce
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="quiz-result" class="hidden text-center space-y-6">
+                    <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-stone-900" id="result-title">¡Tu plato ideal es la Fondue!</h3>
+                    <p class="text-stone-600 max-w-lg mx-auto" id="result-desc">Descripción del resultado...</p>
+                    <button onclick="resetQuiz()" class="px-6 py-3 rounded-xl bg-swissRed text-white font-semibold shadow hover:bg-red-700 transition-all">
+                        Reiniciar Test
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs uppercase tracking-widest text-swissRed font-bold">Inspiración Visual</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900">Galería Alpina</h2>
+                <div class="w-16 h-1 bg-swissRed mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden rounded-2xl shadow-md h-72">
+                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80" alt="Paisaje alpino" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif font-medium">Praderas alpinas y producción lechera</p>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl shadow-md h-72">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80" alt="Cocina suiza" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif font-medium">Preparación de Fondue tradicional</p>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl shadow-md h-72">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/8783481845818895312_0" alt="Confitería y chocolates finos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif font-medium">Confitería y chocolates finos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-swissRed flex items-center justify-center text-white font-bold text-sm">
+                    🇨🇭
+                </div>
+                <span class="text-stone-200 font-serif font-bold text-lg">Sabor Alpino</span>
+            </div>
+            <p class="text-sm text-center">© 2026 Gastronomía Suiza. Celebrando la excelencia culinaria de los Alpes.</p>
+            <div class="flex space-x-4 text-lg">
+                <a href="#" class="hover:text-swissRed transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-swissRed transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-swissRed transition-colors"><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data for Iconic Dishes
+        const dishes = [
+            {
+                name: "Fondue de Queso",
+                region: "Suiza Romandía (Friburgo / Neuchâtel)",
+                desc: "Mezcla caliente de quesos fundidos (generalmente Gruyère y Vacherin fribourgeois) con vino blanco, ajo y kirsch, servida en una caquelon sobre un hornillo donde se sumergen trozos de pan.",
+                ingredients: ["Queso Gruyère", "Queso Vacherin", "Vino blanco seco", "Ajo", "Kirsch", "Pan crujiente"],
+                pairing: "Vino blanco Fendant (Chasselas) o té negro caliente.",
+                image: "https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                name: "Raclette",
+                region: "Cantón de Valais",
+                desc: "Mitad de una rueda de queso Raclette calentada hasta fundir su superficie, la cual se raspa directamente sobre patatas cocidas con piel, pepinillos y cebollitas en vinagre.",
+                ingredients: ["Queso Raclette de Valais", "Patatas medianas", "Pepinillos agrios", "Cebollitas", "Pimienta negra"],
+                pairing: "Vino blanco Fendant o un aromático vino de Valais (Heida).",
+                image: "https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                name: "Rösti",
+                region: "Suiza Alemana (Berna)",
+                desc: "Tortilla dorada y crujiente elaborada con patatas ralladas crudas o cocidas, cocinadas en mantequilla en una sartén hasta lograr una costra perfecta.",
+                ingredients: ["Patatas", "Mantequilla alpina", "Sal", "Opcional: bacon o huevo frito"],
+                pairing: "Cerveza rubia suiza o sidra de manzana artesanal.",
+                image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                name: "Zürcher Geschnetzeltes",
+                region: "Zúrich",
+                desc: "Finas tiras de ternera salteadas con champiñones, cebolla, mantequilla y vino blanco, ligadas con una suave salsa de crema de leche. Tradicionalmente se sirve con Rösti.",
+                ingredients: ["Ternera", "Champiñones frescos", "Crema de leche", "Vino blanco", "Mantequilla"],
+                pairing: "Vino tinto ligero como un Pinot Noir de Zúrich.",
+                image: "https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                name: "Älplermagronen",
+                region: "Suiza Central",
+                desc: "Reconfortante 'pasta de los pastores' elaborada en una sola olla con macarrones, patatas en cubos, nata, queso rallado y se acompaña con cebolla frita y puré de manzana.",
+                ingredients: ["Macarrones", "Patatas", "Queso alpino rallado", "Nata", "Cebolla frita", "Compota de manzana"],
+                pairing: "Leche fría o vino blanco mineral.",
+                image: "http://googleusercontent.com/image_collection/image_retrieval/16485830209613652555_0"
+            },
+            {
+                name: "Tarta de Nuez de Engadina",
+                region: "Cantón de los Grisones",
+                desc: "Exquisito pastel relleno de nueces caramelizadas picadas envueltas en una rica crema de azúcar y miel, dentro de una masa quebrada crujiente.",
+                ingredients: ["Nueces alpinas", "Azúcar caramelizado", "Crema de leche", "Masa quebrada crujiente", "Miel"],
+                pairing: "Café espresso o vino dulce de postre.",
+                image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80"
+            }
+        ];
+
+        // Data for Cheeses
+        const cheeses = [
+            {
+                name: "Gruyère AOP",
+                region: "Friburgo / Vaud",
+                desc: "Queso de pasta dura, madurado en cueva, con notas complejas que van desde lo frutal hasta lo terroso y picante según su curación.",
+                image: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                name: "Emmental AOP",
+                region: "Emmental (Berna)",
+                desc: "El clásico queso con agujeros característicos y un sabor dulce a nuez suave y equilibrado.",
+                image: "https://images.unsplash.com/photo-1552767059-ce182ead6c1b?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                name: "Appenzeller",
+                region: "Appenzell",
+                desc: "Queso intensamente aromático curado con una misteriosa salmuera de hierbas de montaña.",
+                image: "https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                name: "Vacherin Mont d'Or",
+                region: "Jura / Vaud",
+                desc: "Queso blando de leche cruda de invierno envuelto en una cincha de abeto que le otorga un aroma amaderado único.",
+                image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                name: "Tête de Moine",
+                region: "Jura bernés",
+                desc: "Queso cilíndrico que se raspa con un instrumento llamado 'girolle' formando delicados claveles que liberan todo su sabor.",
+                image: "https://images.unsplash.com/photo-1534766555764-ce878a5e3a2b?auto=format&fit=crop&w=600&q=80"
+            }
+        ];
+
+        // Data for Regions
+        const regions = [
+            {
+                id: 'valais',
+                name: 'Valais',
+                icon: '🏔️',
+                desc: 'Cuna de la Raclette y viñedos de altura. Valais destaca por su sol alpino, carnes secas excepcionales y vinos como el Fendant y el Cornalin.',
+                dish: 'Raclette y Carne Seca del Valais',
+                image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'zurich',
+                name: 'Zúrich',
+                icon: '🏙️',
+                desc: 'Metrópoli financiera que equilibra la tradición germánica con la alta cocina internacional y pastelerías centenarias.',
+                dish: 'Zürcher Geschnetzeltes con Rösti',
+                image: 'http://googleusercontent.com/image_collection/image_retrieval/17675452154208525083_0'
+            },
+            {
+                id: 'ticino',
+                name: 'Ticino',
+                icon: '☀️',
+                desc: 'El rincón italoparlante de Suiza. Disfruta de un clima mediterráneo, risotto con setas, polenta y encantadores grotti tradicionales.',
+                dish: 'Polenta con Brasato y Merlot del Ticino',
+                image: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'grisones',
+                name: 'Grisones',
+                icon: '🌲',
+                desc: 'Cantón alpino montañoso famoso por sus valles profundos, la carne curada Bündnerfleisch y los sabrosos Capuns.',
+                dish: 'Tarta de Nuez y Capuns',
+                image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80'
+            }
+        ];
+
+        // Render Dishes
+        function renderDishes() {
+            const container = document.getElementById('dishes-grid');
+            container.innerHTML = dishes.map(d => `
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200/80 flex flex-col hover:shadow-md transition-shadow">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="${d.image}" alt="${d.name}" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-stone-800 shadow">
+                            ${d.region.split(' ')[0]}
+                        </span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-serif font-bold text-stone-900 mb-2">${d.name}</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed mb-4">${d.desc}</p>
+                            <div class="space-y-2 text-xs text-stone-500">
+                                <div><strong class="text-stone-700">Ingredientes:</strong> ${d.ingredients.join(', ')}</div>
+                                <div><strong class="text-stone-700">Maridaje:</strong> ${d.pairing}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render Cheeses
+        function renderCheeses() {
+            const container = document.getElementById('cheese-container');
+            container.innerHTML = cheeses.map(c => `
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80 flex space-x-4 items-center hover:shadow-md transition-shadow">
+                    <img src="${c.image}" alt="${c.name}" class="w-24 h-24 rounded-xl object-cover flex-shrink-0">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider text-swissRed font-semibold">${c.region}</span>
+                        <h4 class="text-lg font-serif font-bold text-stone-900">${c.name}</h4>
+                        <p class="text-stone-600 text-xs mt-1 leading-relaxed">${c.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render Regions
+        function renderRegions() {
+            const btnContainer = document.getElementById('region-buttons');
+            btnContainer.innerHTML = regions.map((r, idx) => `
+                <button onclick="selectRegion('${r.id}')" id="btn-region-${r.id}" class="region-btn p-4 rounded-xl border text-center font-medium transition-all ${idx === 0 ? 'bg-swissRed text-white border-swissRed shadow' : 'bg-white text-stone-800 border-stone-200 hover:border-swissRed'}">
+                    <span class="text-2xl block mb-1">${r.icon}</span>
+                    <span class="text-sm font-semibold">${r.name}</span>
+                </button>
+            `).join('');
+            selectRegion(regions[0].id);
+        }
+
+        function selectRegion(id) {
+            document.querySelectorAll('.region-btn').forEach(btn => {
+                btn.classList.remove('bg-swissRed', 'text-white', 'border-swissRed', 'shadow');
+                btn.classList.add('bg-white', 'text-stone-800', 'border-stone-200');
+            });
+            const activeBtn = document.getElementById(`btn-region-${id}`);
+            if(activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-stone-800', 'border-stone-200');
+                activeBtn.classList.add('bg-swissRed', 'text-white', 'border-swissRed', 'shadow');
+            }
+
+            const reg = regions.find(r => r.id === id);
+            const display = document.getElementById('region-display');
+            display.innerHTML = `
+                <div class="space-y-4">
+                    <span class="px-3 py-1 rounded-full bg-red-100 text-swissRed text-xs font-semibold uppercase tracking-wider">Región de ${reg.name}</span>
+                    <h3 class="text-2xl font-serif font-bold text-stone-900">Tradición culinaria alpina</h3>
+                    <p class="text-stone-600 leading-relaxed">${reg.desc}</p>
+                    <div class="pt-2">
+                        <strong class="text-stone-900 block text-sm mb-1">Plato insignia recomendado:</strong>
+                        <span class="inline-flex items-center space-x-2 text-swissRed font-semibold text-sm">
+                            <i class="fa-solid fa-utensils"></i>
+                            <span>${reg.dish}</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="h-64 sm:h-80 rounded-2xl overflow-hidden shadow-md">
+                    <img src="${reg.image}" alt="${reg.name}" class="w-full h-full object-cover">
+                </div>
+            `;
+        }
+
+        // Quiz Logic
+        function selectQuizAnswer(step, choice) {
+            const container = document.getElementById('quiz-container');
+            const result = document.getElementById('quiz-result');
+            const title = document.getElementById('result-title');
+            const desc = document.getElementById('result-desc');
+
+            container.classList.add('hidden');
+            result.classList.remove('hidden');
+
+            if(choice === 'queso') {
+                title.innerText = "¡Tu plato ideal es la Fondue de Queso o la Raclette!";
+                desc.innerText = "Te apasionan los sabores reconfortantes, el queso fundido y las tradiciones que se comparten alrededor de la mesa con amigos y un buen vino blanco.";
+            } else if(choice === 'carne') {
+                title.innerText = "¡Tu plato ideal es el Zürcher Geschnetzeltes con Rösti!";
+                desc.innerText = "Disfrutas de carnes tiernas y jugosas combinadas con texturas doradas y crujientes como las patatas ralladas a la sartén.";
+            } else {
+                title.innerText = "¡Tu plato ideal es la Tarta de Nuez de Engadina y el Chocolate Suizo!";
+                desc.innerText = "Tienes debilidad por los postres artesanales, el caramelo de frutos secos y la suavidad inigualable del mejor chocolate del mundo.";
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-container').classList.remove('hidden');
+            document.getElementById('quiz-result').classList.add('hidden');
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Initialize on load
+        window.onload = function() {
+            renderDishes();
+            renderCheeses();
+            renderRegions();
+        };
+    </script>
+</body>
+</html>
